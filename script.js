@@ -2,19 +2,40 @@ const display = document.querySelector(".display")
 
 const displayWidth = 800
 
-const resolutionButton = document.querySelector(".button")
+const gridSizeButton = document.querySelector(".button")
 
-function pixelCalculator(pixelInput=16) {
-    const pixelDimension = 800 / pixelInput
+let gridSize = 16
+
+let pixelSize = "50px"
+
+finaleDisplay()
+
+gridSizeButton.addEventListener("click", function getPixelInput() {
+    display.innerHTML = ""
+    let firstInput = Number(prompt("Enter a number between 1 and 100"))
+    if (!isNaN(firstInput) && firstInput >=1 && firstInput <=100) {
+        gridSize = firstInput
+    } else {
+        alert("You entered an incorrect number!")
+    }
+    pixelCalculator()
+    finaleDisplay()
+})
+
+function pixelCalculator() {
+    pixelSize = `${displayWidth / gridSize}px`
 }
 
 function pixelMaker() {
     const newPixel = document.createElement("div")
-    newPixel
     newPixel.classList.add("flex-item")
+    newPixel.style.height = pixelSize
+    newPixel.style.width = pixelSize
     display.appendChild(newPixel)
 }
 
-for (i = 0; i < 16*16; i++) {
-    pixelMaker()
+function finaleDisplay() {
+    for (i = 0; i < gridSize * gridSize; i++) {
+        pixelMaker()
+    }
 }
