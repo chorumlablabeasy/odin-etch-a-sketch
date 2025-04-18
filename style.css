@@ -1,0 +1,35 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+
+.display {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: plum;
+    width: 800px;
+    height: 800px;
+}
+
+.flex-item {
+    box-sizing: border-box;
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+}
+
+.flex-item:hover {
+    background-color: red;
+}
+
+button {
+    height: 50px;
+    width: 100px;
+}
