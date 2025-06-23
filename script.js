@@ -31,6 +31,11 @@ function pixelMaker() {
     newPixel.classList.add("flex-item")
     newPixel.style.height = pixelSize
     newPixel.style.width = pixelSize
+
+    newPixel.addEventListener("mouseover", () => {
+        newPixel.style.backgroundColor = "darkmagenta"
+    })
+
     display.appendChild(newPixel)
 }
 
@@ -39,3 +44,5 @@ function finaleDisplay() {
         pixelMaker()
     }
 }
+
+
